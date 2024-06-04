@@ -10,22 +10,16 @@ const Card = ({ title, description, imageSrc }) => {
   return(
     <div
     style={{
-      borderRadius:"10px",
+      borderRadius:"30px",
       backgroundColor:"white",
-      
-      
-      
-      
-    }}
+      }}
   
     >
       <img src={imageSrc}
         style={{
           borderRadius:"30px",
-          marginTop:'300px',
-          height:'280px',
-          marginTop: '13px',
-          
+          height:'235px',
+          marginTop: '10px',          
           marginLeft: 'auto',
           marginRight: 'auto',    
         }}
@@ -35,7 +29,7 @@ const Card = ({ title, description, imageSrc }) => {
           position: "relative",
           color:"black", 
           position: "relative",
-          height: "135px", // Set a specific height for the parent div  
+          height: "110px", // Set a specific height for the parent div  
           margin:"10px",  
                        
         }}
@@ -45,13 +39,6 @@ const Card = ({ title, description, imageSrc }) => {
         <p>
           {description}
         </p>
-        <div  style={{
-          position: "absolute",
-          bottom: "0",          
-          fontSize:"13px"
-          }}>
-          <p><strong>See more</strong>  <FontAwesomeIcon icon={faArrowRight} size="1x" /></p>
-        </div >
       </section>
     </div>
   )

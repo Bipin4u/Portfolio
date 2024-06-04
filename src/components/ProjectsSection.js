@@ -33,12 +33,12 @@ const projects = [
 const ProjectsSection = () => {
   return (
     <FullScreenSection
-      backgroundColor="#14532d"
+      backgroundColor="#2A4365"
       isDarkBackground
-      p={8}
+      p={6}
       alignItems="flex-start"
-      spacing={8}
-      mb={12}
+      spacing={12}
+      m={6}
     >
       <Heading as="h1" id="projects-section">
          Projects
@@ -46,7 +46,10 @@ const ProjectsSection = () => {
       <Box
         display="grid"
         gridTemplateColumns="repeat(2,minmax(0,1fr))"
-        gridGap={50}
+        gridGap={75}
+        paddingLeft={20}
+        paddingRight={20}
+        
         
       
       >

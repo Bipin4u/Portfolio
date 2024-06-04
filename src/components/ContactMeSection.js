@@ -53,14 +53,13 @@ const LandingSection = () => {
   return (
     <FullScreenSection
       isDarkBackground
-      backgroundColor="#512DA8"
-      spacing={16}
+      backgroundColor="#2A4365"      
     >
-      <VStack w="800px" p={15} m={10} alignItems="flex-start">
+      <VStack w="140%" p={15} m={10} alignItems="flex-start">
         <Heading as="h1" id="contactme-section">
           Contact me
         </Heading>
-        <Box p={16} rounded="md" w="100%">
+        <Box mt={20} pl={250} pr={250} rounded="md" w="100%">
           <form onSubmit={formik.handleSubmit}>
             <VStack spacing={2}>
               <FormControl isInvalid={formik.touched.firstName && formik.errors.firstName}>
@@ -96,15 +95,15 @@ const LandingSection = () => {
 
               <FormControl>
                 <FormLabel htmlFor="type">Type of enquiry</FormLabel>
-                <Select  style={{backgroundColor:"#512DA8"}}
+                <Select  style={{backgroundColor:"#2A4365"}}
                   id="type" 
                   name="type"
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
                   value={formik.values.type}
                   >
-                  <option style={{backgroundColor:"#512DA8"}} value="hireMe">Freelance project proposal</option>
-                  <option style={{backgroundColor:"#512DA8"}} value="openSource">
+                  <option style={{backgroundColor:"#2A4365"}} value="hireMe">Freelance project proposal</option>
+                  <option style={{backgroundColor:"#2A4365"}} value="openSource">
                     Open source consultancy session
                   </option>
                   <option style={{backgroundColor:"#512DA8"}} value="other">Other</option>

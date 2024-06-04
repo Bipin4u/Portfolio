@@ -22,14 +22,8 @@ const socials = [
     icon: faLinkedin,
     url: "https://www.linkedin.com",
   },
-  {
-    icon: faMedium,
-    url: "https://medium.com",
-  },
-  {
-    icon: faStackOverflow,
-    url: "https://stackoverflow.com",
-  },
+
+
 ];
 
 
