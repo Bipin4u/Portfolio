@@ -12,25 +12,20 @@ import { Box, HStack, Link } from "@chakra-ui/react";
 const socials = [
   {
     icon: faEnvelope,
-    url: "mailto: hello@example.com",
+    url: "mailto: bipinkumar9739340018@gmail.com",
   },
   {
     icon: faGithub,
-    url: "https://github.com",
+    url: "https://github.com/bipin4u/",
   },
   {
     icon: faLinkedin,
-    url: "https://www.linkedin.com",
+    url: "https://www.linkedin.com/in/bipin-kumar-2449a71b9/",
   },
-
-
 ];
 
 
 const Header = () => {
-
- 
-
   const handleClick = (anchor)  => {
     console.log(anchor)
     const id = `${anchor}-section`;
@@ -43,6 +38,17 @@ const Header = () => {
       });
     }
   };
+
+  const download = (anchor)  => {
+    var resumeUrl = 'https://github.com/Bipin4u/Resume/raw/main/Resume.pdf'; 
+    var a = document.createElement('a');
+    a.href = resumeUrl;
+    a.download = 'https://github.com/Bipin4u/Resume/raw/main/Resume.pdf'; 
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+}
+
 
   return (
     <Box
@@ -79,6 +85,8 @@ const Header = () => {
             <HStack spacing={6} >
               <Link to = "" onClick={()=>handleClick('projects')}>Projects</Link >
               <Link  to = "" onClick={()=>handleClick('contactme')}>Contact Me</Link >
+              <Link  to = "" onClick={()=>handleClick('skills')}>Skills</Link >
+              <Link  to = "" onClick={()=>download()}>Resume</Link >
             </HStack>
           </nav>
         </HStack>

@@ -6,35 +6,35 @@ import Skillcard from "./Skillcard";
 const myskill = [
   {
     title: "Python",
-      getImageSrc: () => require("../images/photo1.jpg"),
+      getImageSrc: () => require("../images/python.png"),
   },
   {
     title: "React",
-       getImageSrc: () => require("../images/deeplearning.png"),
+       getImageSrc: () => require("../images/React.png"),
   },
   {
     title: "HTML",
-      getImageSrc: () => require("../images/photo3.jpg"),
+      getImageSrc: () => require("../images/HTML.webp"),
   },
   {
     title: "CSS",
-     getImageSrc: () => require("../images/textform.png"),
+     getImageSrc: () => require("../images/CSS.webp"),
   },
   {
     title: "JavaScript",
-     getImageSrc: () => require("../images/textform.png"),
+     getImageSrc: () => require("../images/JS.png"),
   },
   {
     title: "C++",
-     getImageSrc: () => require("../images/textform.png"),
+     getImageSrc: () => require("../images/C++.png"),
   },
   {
     title: "SQL",
-     getImageSrc: () => require("../images/textform.png"),
+     getImageSrc: () => require("../images/SQL.png"),
   },
   {
     title: "GIT",
-     getImageSrc: () => require("../images/textform.png"),
+     getImageSrc: () => require("../images/GIT.png"),
   },
 ];
 
@@ -47,7 +47,7 @@ const Skills = () => {
       m={8}
       mt={20}
     >
-      <Heading >
+      <Heading id="skills-section">
          Skills
       </Heading>
       <Box
@@ -61,6 +61,7 @@ const Skills = () => {
             key={project.title}
             title={project.title}
             imageSrc={project.getImageSrc()}
+            
           />
         ))}
       </Box>
