@@ -1,6 +1,7 @@
 import React, {useEffect, useRef, useState} from "react";
 import { useFormik } from "formik";
 import '../index.css'
+import emailjs from '@emailjs/browser';
 import {
   Box,
   Button,
@@ -31,8 +32,20 @@ const LandingSection = () => {
       type:"",
       comment:""
     },
+
     onSubmit:  (values) => {
       submit("sdf",values)
+      emailjs.send("service_pjrnfkm","template_jpmpzvm", values ,{
+        publicKey: '4KJt0SItQqEnCIzg-',
+        })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        },
+      );
 
       }, 
     validationSchema: Yup.object({
@@ -42,14 +55,20 @@ const LandingSection = () => {
       comment : Yup.string().min(25,"Must be more then 25 character").required("Required")
     }),
   })
+
+
   useEffect(()=>{
     if(response){
       onOpen(response.type, response.message);
       if(response.type=='success'){
+        
+
         formik.resetForm()
       }
     }
   },[response])
+
+
   return (
     <FullScreenSection
       isDarkBackground
@@ -104,9 +123,9 @@ const LandingSection = () => {
                   >
                   <option style={{backgroundColor:"#2A4365"}} value="hireMe">Freelance project proposal</option>
                   <option style={{backgroundColor:"#2A4365"}} value="openSource">
-                    Open source consultancy session
+                    Job oppertunity
                   </option>
-                  <option style={{backgroundColor:"#512DA8"}} value="other">Other</option>
+                  <option style={{backgroundColor:"#2A4365"}} value="other">Other</option>
                 </Select>
                 {formik.touched.type && formik.errors.type ? (
                   <div className="required">{formik.errors.type}</div>

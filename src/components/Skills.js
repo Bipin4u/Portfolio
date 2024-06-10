@@ -56,12 +56,14 @@ const Skills = () => {
         gridGap={70}
         padding={20}
         >
-        {myskill.map((project) => (
+        {myskill.map((project,index) => (
           <Skillcard
             key={project.title}
             title={project.title}
             imageSrc={project.getImageSrc()}
-            
+            isCentered={index>=project.length-2}
+            rotateContinuously={index === 1} // Rotate the second item continuously
+                       
           />
         ))}
       </Box>
