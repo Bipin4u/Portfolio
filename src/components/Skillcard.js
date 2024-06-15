@@ -1,45 +1,30 @@
 import React from "react";
+import '../CSS/skillcard.css'
 
-const Skillcard = ({ title, imageSrc, isCentered, rotateContinuously }) => {
-  const containerStyle = {
-    display: isCentered ? 'flex' : '', // Apply flex display if centered
-    flexWrap: 'wrap', // Ensure content wraps if necessary
-    justifyContent: isCentered ? 'center' : '', // Center content if specified
-  };
-
-  const imageStyle = {
-    height: '120px',
-    width: '150px',
-    animation: rotateContinuously ? 'spin 3s linear infinite' : 'none', // Apply animation if specified
-  };
-
+import { Card , CardBody, Stack,Heading, Divider,Text } from "@chakra-ui/react";
+const Skillcard = ({ title, imageSrc}) => {
+ 
   return (
-    <div style={containerStyle}>
-      <img 
-        src={imageSrc}
-        alt={title} // Adding alt attribute for accessibility
-        style={imageStyle}
-      />
-      <section      
-        style={{  
-          textAlign: 'center',  
-          marginTop: '20px'
-        }}
-      >
-        <strong>{title}</strong>
-      </section>
-      <style>{`
-        @keyframes spin {
-          from {
-            transform: rotate(0deg);
-          }
-          to {
-            transform: rotate(360deg);
-          }
-        }
-      `}</style>
-    </div>
-  );
+      <Card className="card"> {/* Set your desired width */}
+        <CardBody className="cardBody">
+          <div>
+            <img
+              src={imageSrc}
+              className="cardImage"
+              alt="Card Image"
+            />
+          </div>
+          <Stack mt='6' spacing='3'>
+          </Stack>
+          <div className="cardTitle">
+            <Heading size='md'>{title}</Heading>
+          </div>
+        </CardBody>
+        <Divider />
+      </Card>
+    );
+    
+
 };
 
 export default Skillcard;

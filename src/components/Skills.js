@@ -47,14 +47,13 @@ const Skills = () => {
       m={8}
       mt={20}
     >
-      <Heading id="skills-section">
+      <Heading id="skills-section" marginBottom='60px'>
          Skills
       </Heading>
       <Box
         display="grid"
         gridTemplateColumns="repeat(6,minmax(0,1fr))"
-        gridGap={70}
-        padding={20}
+        gridGap={70}        
         >
         {myskill.map((project,index) => (
           <Skillcard
